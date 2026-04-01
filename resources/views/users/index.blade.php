@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="flex justify-between items-center mb-6">
+    <a href="https://www.calculadorarsc.com/" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700">Calculadora RSC-TAE</a>
     <h2 class="text-2xl font-bold">Usuários</h2>
     <a href="{{ route('documents.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700">Adicionar Documento</a>
 </div>

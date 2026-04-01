@@ -12,7 +12,7 @@
 
         <div class="mb-4">
             <label for="title" class="block text-sm font-medium text-gray-700">Título do Documento</label>
-            <input type="text" name="title" id="title" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-2 border">
+            <input type="text" name="title" id="title" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-2 border" placeholder="Ex. Tipo - número/ano - Descrição">
         </div>
 
         <div class="mb-4">
@@ -21,7 +21,7 @@
         </div>
 
         <div class="mb-4">
-            <label for="owner" class="block text-sm font-medium text-gray-700" title="A pessoa principal dona do documento">Proprietário (Selecione ou digite um novo nome e tecle Enter)</label>
+            <label for="owner" class="block text-sm font-medium text-gray-700" title="A pessoa principal dona do documento">Quem está enviando este documento:</label>
             <select name="owner" id="owner" class="mt-1 block w-full select2-tags" required>
                 <option value=""></option>
                 @foreach($users as $user)
@@ -31,12 +31,13 @@
         </div>
 
         <div class="mb-6">
-            <label for="users" class="block text-sm font-medium text-gray-700" title="Outras pessoas que têm acesso ao documento">Vincular outros usuários (Selecione ou digite um novo nome e tecle Enter)</label>
+            <label for="users" class="block text-sm font-medium text-gray-700" title="Outras pessoas que têm acesso ao documento">Todos os nomes contidos no arquivo:</label>
             <select name="users[]" id="users" class="mt-1 block w-full select2-tags" multiple="multiple">
                 @foreach($users as $user)
                     <option value="{{ $user->id }}">{{ $user->name }}</option>
                 @endforeach
             </select>
+            <p class="text-sm text-gray-400">*O nome de quem está enviando o documento deve ser inserido novamente caso também esteja no documento.</p>
         </div>
 
         <div class="flex justify-end">
